@@ -4,7 +4,7 @@
   ...
 }:
 {
-  imports = [ ../../themes/nixy.nix ];
+  imports = [ ../../themes/default.nix ];
 
   config.var = {
     hostname = "nixos";

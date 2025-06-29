@@ -15,7 +15,6 @@
     ../../home/programs/thunar
     ../../home/programs/udiskie
     ../../home/programs/zathura
-    ../../home/programs/zen
 
     ../../home/desktop/mime
     ../../home/desktop/sxhkd
@@ -53,7 +52,6 @@
       erlang
       just
       pnpm
-      air
       flyctl
 
       # Utils
@@ -64,11 +62,12 @@
       unzip
       optipng
       jpegoptim
-      pfetch
       htop
       btop
-      fastfetch
       docker-compose
+      alsa-utils
+      xdotool
+      xclip
 
       # Backup
       brave

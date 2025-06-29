@@ -1,5 +1,3 @@
-# MIGRATE: delete
-
 # Eza is a ls replacement
 {
   programs.eza = {

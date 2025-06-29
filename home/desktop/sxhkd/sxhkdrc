@@ -127,18 +127,16 @@ super + ctrl + {h, l}
 
 # Frequently used app
 alt + shift + {1, 2}
-	{firefox, postman}
+	{zsh -ic 'fork zen-beta', zsh -ic 'fork postman'}
 
-# MIGRATE: make screenshoter
 # Screenshoter
-# Print
-# 	zsh -ic 'screenshot'
+Print
+	zsh -ic 'fork "maim -o --select | xclip -selection clipboard -t image/png"'
 
 #
 # Vim like arrows
 #
 
-# MIGRATE: install xdotool
 alt + h
     xdotool keyup h key --clearmodifiers Left
 

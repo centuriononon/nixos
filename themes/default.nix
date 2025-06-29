@@ -1,5 +1,3 @@
-# MIGRATE: rename this weird nixy.nix file
-
 {
   lib,
   pkgs,
