@@ -1,3 +1,5 @@
+# MIGRATE: rename this weird nixy.nix file
+
 {
   lib,
   pkgs,
@@ -20,6 +22,7 @@
       fetch = "none"; # "nerdfetch" | "neofetch" | "pfetch" | "none"
       textColorOnWallpaper = config.lib.stylix.colors.base01; # Color of the text displayed on the wallpaper (Lockscreen, display manager, ...)
 
+      # MIGRATE: now it will be polybar
       bar = {
         # Hyprpanel
         position = "top"; # "top" | "bottom"

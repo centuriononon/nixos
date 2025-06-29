@@ -1,3 +1,5 @@
+# MIGRATE: delete
+
 # Tmux is a terminal multiplexer that allows you to run multiple terminal sessions in a single window.
 { pkgs, ... }:
 let
@@ -24,7 +26,8 @@ let
     tmux select-pane -t 0
     tmux attach -t "$SESSION"
   '';
-in {
+in
+{
   programs.tmux = {
     enable = true;
     mouse = true;

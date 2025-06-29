@@ -2,20 +2,18 @@
 {
   imports = [
     # Mostly system related configuration
-    ../../nixos/nvidia.nix
-    ../../nixos/audio.nix
-    ../../nixos/docker.nix
-    ../../nixos/bluetooth.nix
-    ../../nixos/fonts.nix
-    ../../nixos/home-manager.nix
-    ../../nixos/nix.nix
-    ../../nixos/systemd-boot.nix
-    ../../nixos/sddm.nix
-    ../../nixos/users.nix
-    ../../nixos/utils.nix
-    ../../nixos/hyprland.nix
+    ../../system/nvidia.nix
+    ../../system/audio.nix
+    ../../system/docker.nix
+    ../../system/bluetooth.nix
+    ../../system/fonts.nix
+    ../../system/home-manager.nix
+    ../../system/nix.nix
+    ../../system/systemd-boot.nix
+    ../../system/users.nix
+    ../../system/bspwm.nix
+    ../../system/general.nix
 
-    # You should let those lines as is
     ./hardware-configuration.nix
     ./variables.nix
   ];

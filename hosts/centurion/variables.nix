@@ -2,16 +2,14 @@
   config,
   lib,
   ...
-}: {
-  imports = [../../themes/nixy.nix];
+}:
+{
+  imports = [ ../../themes/nixy.nix ];
 
   config.var = {
-    hostname = "nixy";
+    hostname = "nixos";
     username = "centurion";
-    configDirectory =
-      "/home/"
-      + config.var.username
-      + "/.config/nixos"; # The path of the nixos configuration directory
+    configDirectory = "/home/" + config.var.username + "/.config/nixos";
 
     keyboardLayout = "us,ru";
     location = "Brazil";
@@ -27,11 +25,10 @@
     autoGarbageCollector = true;
   };
 
-  # Let this here
   options = {
     var = lib.mkOption {
       type = lib.types.attrs;
-      default = {};
+      default = { };
     };
   };
 }

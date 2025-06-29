@@ -1,9 +1,12 @@
+# MIGRATE: delete
+
 # starship is a minimal, fast, and extremely customizable prompt for any shell!
 { config, lib, ... }:
 let
   accent = "#${config.lib.stylix.colors.base0D}";
   background-alt = "#${config.lib.stylix.colors.base01}";
-in {
+in
+{
   programs.starship = {
     enable = true;
     settings = {
@@ -17,7 +20,9 @@ in {
         "$git_status"
         "$character"
       ];
-      directory = { style = accent; };
+      directory = {
+        style = accent;
+      };
 
       character = {
         success_symbol = "[❯](${accent})";
@@ -32,8 +37,7 @@ in {
       };
 
       git_status = {
-        format =
-          "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218)($ahead_behind$stashed)]($style)";
+        format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218)($ahead_behind$stashed)]($style)";
         style = "cyan";
         conflicted = "";
         renamed = "";

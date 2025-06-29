@@ -1,7 +1,9 @@
 # Thunar is a file explorer
 { pkgs, config, ... }:
-let user = config.var.username;
-in {
+let
+  user = config.var.username;
+in
+{
   # ctrl + m to toggle the menubar
   home.packages = with pkgs; [
     xfce.thunar
@@ -28,7 +30,7 @@ in {
     XDG_ICON_DIR = "${pkgs.whitesur-icon-theme}/share/icons/WhiteSur";
   };
 
-  # bookmarks for the side pane
+  # bookmarks for the side panel
   gtk.gtk3.bookmarks = [ "file:///home/${user}/Downloads Downloads" ];
 
   home.file.".config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml".text = ''

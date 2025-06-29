@@ -1,4 +1,3 @@
-# My shell configuration
 {
   pkgs,
   lib,

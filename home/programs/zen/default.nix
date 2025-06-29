@@ -1,6 +1,7 @@
 # Zen is a minimalistic web browser.
 { pkgs, inputs, ... }:
 let
+  # MIGRATE: likely I don't need this wrapper for xorg
   # Create a wrapper script for zen-browser with Wayland enabled
   zenWithWayland = pkgs.symlinkJoin {
     name = "zen-browser-wayland";
@@ -11,4 +12,7 @@ let
         --set MOZ_ENABLE_WAYLAND 1
     '';
   };
-in { home.packages = [ zenWithWayland ]; }
+in
+{
+  home.packages = [ zenWithWayland ];
+}
