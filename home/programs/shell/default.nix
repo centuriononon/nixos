@@ -4,5 +4,6 @@
     ./zsh.nix
     ./zoxide.nix
     ./eza.nix
+    ./starship.nix
   ];
 }

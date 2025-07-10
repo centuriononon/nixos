@@ -15,9 +15,12 @@
     ../../home/programs/thunar
     ../../home/programs/udiskie
     ../../home/programs/zathura
+    ../../home/programs/zen
 
-    ../../home/desktop/mime
     ../../home/desktop/sxhkd
+    ../../home/desktop/polybar
+    ../../home/desktop/picom
+    ../../home/desktop/mime
     ../../home/desktop/bspwm
   ];
 
@@ -27,19 +30,13 @@
 
     packages = with pkgs; [
       # Apps
-      neovim # Neovim text-editor
-      zed-editor # IDE
-      keepassxc # Password manager
-      telegram-desktop # Messenger telegram
-      vlc # Video player
-      blanket # White-noise app
-      gnome-calendar # Calendar
-      textpieces # Manipulate texts
-      curtail # Compress images
+      neovim 
+      zed-editor 
+      keepassxc
+      telegram-desktop
       resources
-      gnome-clocks
-      gnome-text-editor
-      mpv # Video player
+      mpv
+      pavucontrol
 
       # Dev
       postgresql
@@ -53,8 +50,9 @@
       just
       pnpm
       flyctl
+      doctl
+      mtr
 
-      # Utils
       scrcpy
       calc
       television # Fuzzy search for Zed Editor
@@ -68,8 +66,9 @@
       alsa-utils
       xdotool
       xclip
+      maim
+      gnumake
 
-      # Backup
       brave
       vscode
     ];

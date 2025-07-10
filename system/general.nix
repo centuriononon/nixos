@@ -7,6 +7,7 @@ let
   hostname = config.var.hostname;
   configDir = config.var.configDirectory;
   timeZone = config.var.timeZone;
+  keyboardLayout = config.var.keyboardLayout;
   defaultLocale = config.var.defaultLocale;
   extraLocale = config.var.extraLocale;
   autoUpgrade = config.var.autoUpgrade;
@@ -40,6 +41,12 @@ in
       enable = true;
       windowManager.bspwm.enable = true;
       displayManager.lightdm.enable = true;
+      exportConfiguration = true;
+
+      xkb = {
+        layout = keyboardLayout;
+        options = "grp:alt_space_toggle";
+      };
     };
     gnome.gnome-keyring.enable = true;
     psd = {
@@ -90,6 +97,8 @@ in
 
   environment.systemPackages = with pkgs; [
     sxhkd
+    polybar
+    picom
     fd
     bc
     gcc
@@ -117,6 +126,13 @@ in
     # don't ask for password for wheel group
     sudo.wheelNeedsPassword = false;
   };
+
+  systemd.sleep.extraConfig = ''
+    AllowSuspend=no
+    AllowHibernation=no
+    AllowHybridSleep=no
+    AllowSuspendThenHibernate=no
+  '';
 
   services.logind.extraConfig = ''
     # don’t shutdown when power button is short-pressed

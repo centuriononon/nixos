@@ -126,11 +126,11 @@ super + ctrl + {h, l}
 #
 
 # Frequently used app
-alt + shift + {1, 2}
-	{zsh -ic 'fork zen-beta', zsh -ic 'fork postman'}
+alt + shift + {1, 2, 3}
+	{zsh -ic 'fork zen-beta', zsh -ic 'fork postman', zsh -ic 'fork telegram-desktop'}
 
 # Screenshoter
-Print
+super + F12
 	zsh -ic 'fork "maim -o --select | xclip -selection clipboard -t image/png"'
 
 #

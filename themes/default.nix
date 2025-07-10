@@ -84,9 +84,6 @@
     };
 
     polarity = "dark";
-    image = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/purple-japan_purple.png";
-      sha256 = "sha256-pmyXNDosm5EvmNF4eiMX2HZv8qNbyX/C4bsSGFHTncM=";
-    };
+    image = ./images/poster.jpg;
   };
 }

@@ -11,7 +11,6 @@
     ../../system/nix.nix
     ../../system/systemd-boot.nix
     ../../system/users.nix
-    ../../system/bspwm.nix
     ../../system/general.nix
 
     ./hardware-configuration.nix

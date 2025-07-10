@@ -53,6 +53,7 @@ let
       "x-scheme-handler/http"
       "x-scheme-handler/https"
       "x-scheme-handler/unknown"
+      "application/xhtml+xml"
     ];
     office = [
       "application/vnd.oasis.opendocument.text"
