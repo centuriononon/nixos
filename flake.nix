@@ -14,7 +14,6 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    search-nixos-api.url = "github:anotherhadi/search-nixos-api";
   };
 
   outputs =
