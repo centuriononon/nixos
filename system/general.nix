@@ -36,6 +36,8 @@ in
     LC_ALL = extraLocale;
   };
 
+  services.xscreensaver.enable = true;
+
   services = {
     xserver = {
       enable = true;
@@ -96,6 +98,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    xscreensaver
     sxhkd
     polybar
     picom

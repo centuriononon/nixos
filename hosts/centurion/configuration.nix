@@ -12,6 +12,7 @@
     ../../system/systemd-boot.nix
     ../../system/users.nix
     ../../system/general.nix
+    ../../system/ollama.nix
 
     ./hardware-configuration.nix
     ./variables.nix

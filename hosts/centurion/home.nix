@@ -30,8 +30,8 @@
 
     packages = with pkgs; [
       # Apps
-      neovim 
-      zed-editor 
+      neovim
+      zed-editor
       keepassxc
       telegram-desktop
       resources
@@ -39,6 +39,7 @@
       pavucontrol
 
       # Dev
+      alacritty
       postgresql
       redis
       postman
@@ -52,6 +53,7 @@
       flyctl
       doctl
       mtr
+      kubectl
 
       scrcpy
       calc

@@ -13,8 +13,7 @@
       "alt+tab" = "send_text all \\x1b[27;3;9~";
     };
     settings = {
-      # MIGRATE: I have to increase it significally
-      scrollback_lines = 10000;
+      scrollback_lines = 1000000;
       initial_window_width = 1200;
       initial_window_height = 600;
       update_check_interval = 0;
