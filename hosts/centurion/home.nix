@@ -37,6 +37,7 @@
       resources
       mpv
       pavucontrol
+      libreoffice-fresh
 
       # Dev
       alacritty

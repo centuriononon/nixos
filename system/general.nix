@@ -84,6 +84,9 @@ in
   };
   services.openssh.enable = true;
 
+  # allow running dynamically linkend executables
+  programs.nix-ld.enable = true;
+
   # enable zsh autocompletion for system packages (systemd, etc)
   environment.pathsToLink = [ "/share/zsh" ];
 
