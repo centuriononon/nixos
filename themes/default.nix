@@ -64,7 +64,7 @@
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "JetBrains Mono Nerd Font";
+        name = "JetBrainsMono Nerd Font";
       };
       sansSerif = {
         package = pkgs.source-sans-pro;
@@ -84,6 +84,6 @@
     };
 
     polarity = "dark";
-    image = ./images/poster.jpg;
+    image = ./images/colors.jpg;
   };
 }

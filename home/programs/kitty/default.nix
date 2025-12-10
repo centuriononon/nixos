@@ -2,7 +2,6 @@
 {
   programs.kitty = {
     enable = true;
-    # MIGRATE: I definitely will never use Tmux
     keybindings = {
       # Reset existing mappings
       "ctrl+alt+tab" = "next_tab";

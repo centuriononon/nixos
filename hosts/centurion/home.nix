@@ -1,12 +1,8 @@
-{
-  pkgs,
-  config,
-  ...
-}:
-{
+{ pkgs, config, ... }: {
   imports = [
     ./variables.nix
 
+    ../../home/programs/direnv
     ../../home/programs/git
     ../../home/programs/kitty
     ../../home/programs/lazygit
@@ -16,6 +12,7 @@
     ../../home/programs/udiskie
     ../../home/programs/zathura
     ../../home/programs/zen
+    ../../home/programs/zed
 
     ../../home/desktop/sxhkd
     ../../home/desktop/polybar
@@ -31,6 +28,8 @@
     packages = with pkgs; [
       # Apps
       neovim
+      brave
+      vscode
       zed-editor
       keepassxc
       telegram-desktop
@@ -38,24 +37,29 @@
       mpv
       pavucontrol
       libreoffice-fresh
+      alacritty
 
       # Dev
-      alacritty
+      elixir
+      erlang
+      rebar3
       postgresql
       redis
       postman
       go
       nodejs
       python3
-      elixir
-      erlang
       just
       pnpm
       flyctl
       doctl
       mtr
       kubectl
-
+      kubernetes-helm
+      minikube
+      gcc
+      cmake
+      vimHugeX
       scrcpy
       calc
       television # Fuzzy search for Zed Editor
@@ -71,9 +75,14 @@
       xclip
       maim
       gnumake
-
-      brave
-      vscode
+      apacheKafka
+      lsof
+      protobuf
+      envsubst
+      packer
+      libvirt
+      OVMF
+      qemu
     ];
 
     # Don't touch this
@@ -82,3 +91,4 @@
 
   programs.home-manager.enable = true;
 }
+

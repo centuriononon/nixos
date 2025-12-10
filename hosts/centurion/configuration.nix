@@ -13,6 +13,7 @@
     ../../system/users.nix
     ../../system/general.nix
     ../../system/ollama.nix
+    ../../system/flatpak.nix
 
     ./hardware-configuration.nix
     ./variables.nix

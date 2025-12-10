@@ -131,6 +131,9 @@ in
 
     # don't ask for password for wheel group
     sudo.wheelNeedsPassword = false;
+
+    # bridge between unprivileged apps and privileged system services
+    polkit.enable = true;
   };
 
   systemd.sleep.extraConfig = ''
