@@ -127,7 +127,7 @@ super + ctrl + {h, l}
 
 # Frequently used app
 alt + shift + {1, 2, 3}
-	{zsh -ic 'fork zen-beta', zsh -ic 'fork postman', zsh -ic 'fork telegram-desktop'}
+	{zsh -ic 'fork zen-beta', zsh -ic 'fork postman', zsh -ic 'fork Telegram'}
 
 # Screenshoter
 super + F12

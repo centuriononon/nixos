@@ -9,7 +9,7 @@
   config.var = {
     hostname = "nixos";
     username = "centurion";
-    configDirectory = "/home/" + config.var.username + "/.config/nixos";
+    configDirectory = "/etc/nixos";
 
     keyboardLayout = "us,ru";
     location = "Brazil";
@@ -21,7 +21,7 @@
       email = "centurionoff.dev@proton.me";
     };
 
-    autoUpgrade = false;
+    autoUpgrade = true;
     autoGarbageCollector = true;
   };
 

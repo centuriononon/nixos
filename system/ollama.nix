@@ -4,7 +4,7 @@
   services.ollama = {
     # package = pkgs.unstable.ollama; # If you want to use the unstable channel package for example
     enable = true;
-    acceleration = "cuda"; # Or "rocm"
+    package = pkgs.ollama-cuda;  # For CUDA acceleration
     # environmentVariables = { # I haven't been able to get this to work, but please see the serviceConfig workaround below
     # HOME = "/home/ollama";
     # OLLAMA_MODELS = "/home/ollama/models";

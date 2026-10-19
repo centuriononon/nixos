@@ -7,7 +7,7 @@ in
 {
   programs.fzf = {
     enable = true;
-    enableZshIntegration = true;
+    enableZshIntegration = false;
     colors = lib.mkForce {
       "fg+" = accent;
       "bg+" = "-1";

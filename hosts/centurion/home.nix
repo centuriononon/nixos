@@ -1,4 +1,6 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, ... }: 
+
+{
   imports = [
     ./variables.nix
 
@@ -28,7 +30,6 @@
     packages = with pkgs; [
       # Apps
       neovim
-      brave
       vscode
       zed-editor
       keepassxc
@@ -38,8 +39,10 @@
       pavucontrol
       libreoffice-fresh
       alacritty
+      signal-desktop
 
       # Dev
+      android-tools
       elixir
       erlang
       rebar3
@@ -54,12 +57,11 @@
       flyctl
       doctl
       mtr
-      kubectl
       kubernetes-helm
       minikube
       gcc
       cmake
-      vimHugeX
+      vim-full
       scrcpy
       calc
       television # Fuzzy search for Zed Editor
@@ -83,6 +85,7 @@
       libvirt
       OVMF
       qemu
+      codex
     ];
 
     # Don't touch this
@@ -91,4 +94,3 @@
 
   programs.home-manager.enable = true;
 }
-

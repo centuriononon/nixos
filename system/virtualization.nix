@@ -1,12 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   virtualisation.libvirtd.enable = true;
-  users.users.username.extraGroups = [
-    "libvirtd"
-    "kvm"
-  ];
+
   environment.systemPackages = with pkgs; [
     virt-manager
     qemu
   ];
+
+  users.users."${config.var.username}".extraGroups = [ "libvirtd" "kvm" ];
 }
+

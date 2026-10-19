@@ -4,14 +4,14 @@
   [
     {
       "label": "tv:find-files",
-      "command": "zed \"$(tv files)\"",
+      "command": "zed $(tv files)",
       "hide": "always",
       "allow_concurrent_runs": false,
       "use_new_terminal": true,
     },
     {
       "label": "tv:find-in-files",
-      "command": "zed \"$(tv text)\"",
+      "command": "zed $(tv text)",
       "hide": "always",
       "allow_concurrent_runs": false,
       "use_new_terminal": true,
@@ -25,57 +25,23 @@
     # This populates the userSettings "auto_install_extensions"
     extensions = [
       # Themes
-      "kanagawa"
+      "kanagawa-themes"
 
       # LSP
       "nix"
       "toml"
-      "json"
-      "yaml"
-      "markdown"
-      "git"
       "elixir"
+      "sql"
+      "latex"
       "make"
-      "c"
-      "cpp"
-      "node"
-      "typescript"
-      "react"
       "html"
-      "css"
-      "docker"
-      "packer"
-
-      # Helpers
-      "television" # fuzzy-search
+      "dockerfile"
+      "terraform"
     ];
 
 
     # Everything inside of these brackets are Zed options
     userSettings = {
-      assistant = {
-	enabled = true;
-	version = "2";
-	default_open_ai_model = null;
-
-	# Provider options:
-	# - zed.dev models (claude-3-5-sonnet-latest) requires GitHub connected
-	# - anthropic models (claude-3-5-sonnet-latest, claude-3-haiku-latest, claude-3-opus-latest) requires API_KEY
-	# - copilot_chat models (gpt-4o, gpt-4, gpt-3.5-turbo, o1-preview) requires GitHub connected
-	# default_model = {
-	#   provider = "zed.dev";
-	#   model = "claude-3-5-sonnet-latest";
-	# };
-
-	# inline_alternatives = [
-	#   {
-	#     provider = "copilot_chat";
-	#     model = "gpt-3.5-turbo";
-	#   }
-	# ];
-      };
-
-      hour_format = "hour24";
       auto_update = false;
 
       terminal = {
@@ -99,82 +65,61 @@
 	option_as_meta = false;
 	button = false;
 	shell = "system";
-	toolbar = {
-	  title = true;
-	};
 	working_directory = "current_project_directory";
       };
 
       lsp = {
-	rust-analyzer = {
-	  binary = {
-	    path_lookup = true;
-	  };
-	};
-
-	nix = {
-	  binary = {
-	    path_lookup = true;
-	  };
-	};
-
-	elixir-ls = {
-	  binary = {
-	    path_lookup = true;
-	  };
-	  settings = {
-	    dialyzerEnabled = true;
-	  };
-	};
+        expert = {
+          settings = {
+            workspaceSymbols = {
+              minQueryLength = 2;
+            };
+          };
+          binary = {
+            arguments= ["--stdio"];
+          };
+        };
       };
 
       languages = {
 	"Elixir" = {
-	  language_servers = [ "!lexical" "elixir-ls" "!next-ls" ];
-	  format_on_save = {
-	    external = {
-	      command = "mix";
-	      arguments = [ "format" "--stdin-filename" "{buffer_path}" "-" ];
-	    };
-	  };
+	  language_servers = [ "expert" "!elixir-ls" "!next-ls" "!lexical" ];
+	  format_on_save = "on";
 	};
 
 	"HEEX" = {
-	  language_servers = [ "!lexical" "elixir-ls" "!next-ls" ];
-	  format_on_save = {
-	    external = {
-	      command = "mix";
-	      arguments = [ "format" "--stdin-filename" "{buffer_path}" "-" ];
-	    };
-	  };
+	  language_servers = [ "expert" "!elixir-ls" "!next-ls" "!lexical" ];
+	  format_on_save = "on";
 	};
 
+        "EEX" = {
+          language_servers = [ "expert" "!elixir-ls" "!next-ls" "!lexical" ];
+	  format_on_save = "on";
+        };
+
 	"TypeScript" = {
-		language_servers = [ "typescript-language-server" ];
+          language_servers = [ "typescript-language-server" ];
+	  format_on_save = "on";
 	};
 
 	"TSX" = {
-		language_servers = [ "typescript-language-server" ];
+          language_servers = [ "typescript-language-server" ];
 	};
 
 	"YAML" = {
-		language_servers = [ "yaml-language-server" ];
+          language_servers = [ "yaml-language-server" ];
 	};
 
 	"JSON" = {
-		language_servers = [ "json-language-server" ];
+          language_servers = [ "json-language-server" ];
 	};
 
 	"Dockerfile" = {
-		language_servers = [ "dockerfile-language-server" ];
+          language_servers = [ "dockerfile-language-server" ];
 	};
 
 	"C" = {
-		language_servers = [ "clangd" ];
-	};
-
-	"C++" = {
-		language_servers = [ "clangd" ];
+          language_servers = [ "clangd" ];
 	};
       };
 
@@ -205,7 +150,7 @@
       }
 
       {
-	context = "Editor";
+	context = "Editor && vim_mode == normal";
 	bindings = {
 	  "g d" = "editor::GoToDefinition";
 	  "g i" = "editor::GoToImplementation";
